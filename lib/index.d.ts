@@ -20,16 +20,14 @@ declare module "@deepseek-ai/dsh-session-projection/types" {
   }
 
   interface SessionProjectionMap {
-    /** Whole-session USD cost plus the current turn's incremental cost. */
+    /** Whole-session USD cost plus per-turn cost keyed by turn number. */
     sessionCost: CostBucketView & {
       provider: string | null;
       model: string | null;
       /** True once any priced usage has been folded. */
       priced: boolean;
-      turn: CostBucketView & {
-        /** Top-level turn number the incremental figure belongs to. */
-        turn: number | null;
-      };
+      /** Per-turn cost, keyed by turn number as a string. */
+      byTurn: Record<string, CostBucketView>;
     };
   }
 }

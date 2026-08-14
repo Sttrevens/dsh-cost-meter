@@ -1,5 +1,5 @@
 {
-  "name": "@4dgames/dsh-cost-meter",
+  "name": "@steven-wu/dsh-cost-meter",
   "version": "0.1.0-rc.1",
   "description": "dsh plugin: live USD cost badge (whole-session + per-turn) from provider token usage and a configurable pricing table.",
   "keywords": [
