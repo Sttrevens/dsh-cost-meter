@@ -42,22 +42,19 @@ when no `default` is present).
 
 ## Install
 
+The package declares a `dsh.bundle` manifest, so `dsh plugin add` installs it
+**and** adds it to the profile's bundle layers automatically — no manual patch
+edit:
+
 ```sh
-# 1. add the plugin to the web profile (from npm)
 dsh plugin --profile web add @steven-wu/dsh-cost-meter
+# restart the web profile, then refresh the page
+```
 
-#    …or from a local checkout during development:
-#    dsh plugin --profile web add file:/path/to/dsh-cost-meter
+For a local checkout during development:
 
-# 2. mount it in the profile's patch layer
-cat >> ~/.dsh/profiles/web/cordis.patch.yml <<'YAML'
-- insert:
-    - id: cost-meter
-      name: '@steven-wu/dsh-cost-meter'
-YAML
-
-# 3. restart
-# (stop the running `dsh --profile web`, then start it again)
+```sh
+dsh plugin --profile web add file:/path/to/dsh-cost-meter
 ```
 
 Notes:
@@ -66,6 +63,8 @@ Notes:
   harness copy and can pull a stale dist-tag.
 - The Settings "Plugins" panel is read-only (inventory + config cards); install
   happens only through `dsh plugin --profile … add`.
+- Purely-cordis mounting (a `cordis.patch.yml` insert row) also works — the
+  shipped `cordis.patch.yml` holds that row for either path.
 
 The `sessionCost` projection is delivered through the same seam as
 `tokenUsage` / `sessionStats`, so it also appears in every projection carrier

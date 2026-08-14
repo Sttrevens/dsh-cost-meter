@@ -1,0 +1,6 @@
+# Bundle patch layer shipped with the package. Applied when this package is
+# listed in a profile's `dsh.profile.bundles`. It mounts the plugin's host half
+# (the sessionCost projection); the browser half ships via `dsh.client`.
+- insert:
+    - id: cost-meter
+      name: '@steven-wu/dsh-cost-meter'
