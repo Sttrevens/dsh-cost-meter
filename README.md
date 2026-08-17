@@ -26,10 +26,10 @@ Pricing is USD per **million** tokens, keyed by `provider/model`:
 {
   "per": 1000000,
   "currency": "USD",
-  "default": { "input": 0.435, "output": 0.87, "cacheRead": 0.003625, "cacheWrite": 0 },
+  "default": { "input": 0.6525, "output": 1.9575, "cacheRead": 0.02175, "cacheWrite": 0 },
   "models": {
-    "deepseek-official/deepseek-v4-pro":   { "input": 0.435, "output": 0.87,   "cacheRead": 0.003625, "cacheWrite": 0 },
-    "deepseek-official/deepseek-v4-flash": { "input": 0.14,  "output": 0.28,   "cacheRead": 0.0028,   "cacheWrite": 0 }
+    "deepseek-official/deepseek-v4-pro":   { "input": 0.6525, "output": 1.9575,  "cacheRead": 0.02175, "cacheWrite": 0 },
+    "deepseek-official/deepseek-v4-flash": { "input": 0.2175, "output": 0.6525,  "cacheRead": 0.00725, "cacheWrite": 0 }
   }
 }
 ```
